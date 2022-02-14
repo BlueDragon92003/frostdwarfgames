@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap');
+
+body {
+	font-family: 'Fira Sans', sans-serif;
+	color: #000;
+	background-color: #eff;
+}
+
+.c-6 {
+	box-sizing: border-box;
+	width: 48vw;
+	margin: 0.5vw;
+	float: left;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		color: #eff;
+		background-color: #000;
+	}
+}
