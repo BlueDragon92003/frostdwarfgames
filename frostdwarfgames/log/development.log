@@ -1,0 +1,5 @@
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `frostdwarfgames_development` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE `frostdwarfgames_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: www.frostdwarfgames.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: www.frostdwarfgames.com
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: www.joraeschultz.com

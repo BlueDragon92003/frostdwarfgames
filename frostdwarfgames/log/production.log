@@ -1,0 +1,4 @@
+I, [2022-03-06T00:07:27.710609 #3289]  INFO -- : [fa08a210-7ac8-4864-8ea9-c613a6b08a0c] Started GET "/" for 172.58.136.196 at 2022-03-06 00:07:27 +0000
+F, [2022-03-06T00:07:27.711491 #3289] FATAL -- : [fa08a210-7ac8-4864-8ea9-c613a6b08a0c]   
+[fa08a210-7ac8-4864-8ea9-c613a6b08a0c] ActionController::RoutingError (No route matches [GET] "/"):
+[fa08a210-7ac8-4864-8ea9-c613a6b08a0c]   
