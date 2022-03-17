@@ -781,3 +781,30 @@ Processing by RootController#home as HTML
 Completed 200 OK in 8ms (Views: 7.1ms | Allocations: 2783)
 
 
+Started GET "/" for 127.0.0.1 at 2022-03-16 20:23:19 -0500
+Processing by RootController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/home.html.erb within layouts/application
+  Rendered root/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3165)
+Completed 200 OK in 6ms (Views: 5.2ms | Allocations: 3406)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-16 20:23:20 -0500
+Processing by RootController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/home.html.erb within layouts/application
+  Rendered root/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1122)
+Completed 200 OK in 1ms (Views: 1.2ms | Allocations: 1363)
+
+
+Started GET "/" for 127.0.0.1 at 2022-03-17 07:05:14 -0500
+Processing by RootController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering root/home.html.erb within layouts/application
+  Rendered root/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 363)
+  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 26253)
+Completed 200 OK in 89ms (Views: 84.5ms | ActiveRecord: 0.0ms | Allocations: 30949)
+
+
