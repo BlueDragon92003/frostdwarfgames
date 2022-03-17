@@ -7,9 +7,30 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+  </head>	
 
   <body>
-    <%= yield %>
+    <div class="header">
+        
+        <!-- Image | Navigation | User stuff eventually -->
+        
+    </div>
+    
+    <div class="main">
+        
+        <div class="leftbar"><%= yield :leftbar %></div>
+        
+        <div class="rightbar"><%= yield :rightbar %></div>
+        
+        <div class="center">
+            
+            <div class="content"><%= yield %></div>
+            
+            <div class="footer"><%= yield :footer %></div>
+            
+        </div>
+        
+    </div>
+    
   </body>
 </html>
