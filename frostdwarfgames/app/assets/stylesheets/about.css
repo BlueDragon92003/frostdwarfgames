@@ -1,0 +1,10 @@
+@media only screen and (min-width: 1200px) {
+
+.aboutImage {
+  width: 12.5vw;
+  height: auto;
+  float: left;
+  margin: 0.3vw 0.3vw 0.3vw 0;
+}
+
+}
