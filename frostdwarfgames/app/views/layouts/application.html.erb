@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Frostdwarfgames</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title>Frostdwarfgames</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
+		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+		<%= stylesheet_link_tag "about", "data-turbo-track": "reload" %>
+	</head>	
 
-  <body>
-    <%= yield %>
-  </body>
+	<body>
+		<div class="header">
+				
+				<!-- Image -->
+				
+				<!-- Navigation -->
+				
+				<a href="<%= about_root_path %>"><div class="nav-item">About</div></a>
+				
+				<!-- User stuff eventually -->
+				
+		</div>
+		
+		<div class="main">
+				
+				<div class="leftbar"><%= yield :leftbar %></div>
+				
+				<div class="rightbar"><%= yield :rightbar %></div>
+				
+				<div class="center">
+						
+						<div class="content"><%= yield %></div>
+						
+						<div class="footer"><p>&copy; No one. Do you think I have money, time, or the want to wait for a bureacracy to validate something?</p></div>
+						
+				</div>
+				
+		</div>
+		
+	</body>
+
 </html>

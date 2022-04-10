@@ -1,2 +1,6 @@
-frostdwarfgames/config/*
+frostdwarfgames/config/database.yml
 frostdwarfgames/public/assets/
+frostdwarfgames/tmp/
+frostdwarfgames/log/
+frostdwarfgames/app/assets/images
+frostdwarfgames/app/assets/markdown

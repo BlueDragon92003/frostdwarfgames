@@ -13,3 +13,147 @@
  *= require_tree .
  *= require_self
  */
+
+/* General View */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.tag {
+	background: #99f;
+ 	border-radius: 0.5em;
+ 	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	padding: 0.2em;
+	text-decoration: none;
+}
+
+.header {
+	background: #206;
+	margin: 0;
+	width: 100vw;
+}
+
+.nav-item {
+	background: #308;
+	border-radius: 0.5vh;
+	color: #fff;
+	font-size: 2vh;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+/* Portrait Phone View */
+
+@media only screen and (max-aspect-ratio: 3/4) {
+
+.header {
+	height: 10vh;
+	overflow-y: hide;
+	padding: 0 5%;
+}
+
+.header:hover {
+	height: 90vh;
+}
+
+.nav-item {
+	height: 3vh;
+	width: 90vw;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+}
+
+/* Desktop View */
+
+@media only screen and (min-aspect-ratio: 4/3) and (min-width: 1000px) and (min-height: 750px) {
+
+.header {
+	box-sizing: border-box;
+	height: 10vh;
+}
+
+.nav-item {
+	box-sizing: border-box;
+	display: block;
+	float: right;
+	height: 5vh;
+	margin: 2.5vh 1vw;
+	padding: 1.5vh;
+}
+
+.nav-item:hover {
+	text-decoration: underline;
+}
+
+.leftbar {
+	box-sizing: border-box;
+	background: #333;
+	color: #fff;
+	float: left;
+	height: 90vh;
+	margin: 0;
+	padding: 0 0.5%;
+	width: 10vw;
+}
+
+.rightbar {
+	background: #dff;
+	box-sizing: border-box;
+	float: right;
+	height: 90vh;
+	margin: 0;
+	padding: 0 0.5%;
+	width: 10vw;
+}
+
+.main {
+	box-sizing: border-box;
+	height: 90vh;
+	width: 100vw;
+}
+
+.center {
+	box-sizing: border-box;
+	height: 90vh;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 80vw;
+}
+
+.content {
+	box-sizing: border-box;
+	height: 80vh;
+	margin: 0;
+	overflow: auto;
+	padding: 0 0.5%;
+	width: 80vw;
+}
+
+.footer {
+	box-sizing: border-box;
+	background: #eff;
+	height: 10vh;
+	margin: 0;
+	padding: 0 0.5%;
+	width: 80vw;
+}
+
+.footer > p {
+   padding: 0.5% 0.5%;
+   margin: 0;
+}
+
+}

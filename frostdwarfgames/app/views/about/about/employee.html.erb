@@ -1,0 +1,27 @@
+<% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
+
+<% content_for :leftbar do %>
+  <h3>"Employees"</h3>
+  <ul>
+  <% @employees.order(name: :asc).each do |employee| %>
+    <li>
+    <% if employee.id == @employee.id %>
+      <em class="aboutPerson"><%= employee.name %></em>
+	<% else %>
+      <a href="<%= employee.id %>" class="aboutPerson" ><%= employee.name %></a>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% content_for :rightbar do %>
+  <h2>Projects</h2>
+<% end %>
+
+<% if @employee.imgUrl? %>
+  <%= image_tag ("employees/" + @employee.imgUrl), class: "aboutImage" %>
+<% end %>
+
+<h1><%= @employee.name %></h1>
+<%= sanitize md.render(@employee.about) %>
