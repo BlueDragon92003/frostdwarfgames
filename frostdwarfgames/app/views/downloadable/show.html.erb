@@ -1,0 +1,4 @@
+<% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
+
+<h1><%= @downloadable.project.name %></h1>
+<%= sanitize md.render(@downloadable.project.description) %>

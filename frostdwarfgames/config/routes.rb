@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     root "about#home"
     get "/:id", to: "about#employee"
   end 
+
+  get "/downloadable/:id", to: "downloadable#show"
 end
