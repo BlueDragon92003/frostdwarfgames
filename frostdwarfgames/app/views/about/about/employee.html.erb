@@ -17,7 +17,19 @@
 
 <% content_for :rightbar do %>
   <h2>Projects</h2>
-  <% @employee.credits %>
+  <%
+    credits = @employee.credits
+    
+    CreditType.all.each do |credit_type|
+
+      if credits.any? { |credit| credit.credit_type ==  credit_type} then
+        %> <h3><%= credit_type.name.capitalize %></h3> <%
+        (credits.filter { |credit| credit.credit_type == credit_type }).each do |credit|
+          %><%= link_to credit.project.name, project_path(credit.project), class: "tag" %><%
+        end
+      end
+    end
+  %>
 <% end %>
 
 <% if @employee.image? %>

@@ -1,0 +1,42 @@
+<% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
+
+<% content_for :leftbar do %>
+  <h3>Projects</h3>
+  <ul>
+  <% @projects.order(name: :asc).each do |project| %>
+    <li>
+    <% if project.id == @project.id %>
+      <em class="aboutPerson"><%= project.name %></em>
+	<% else %>
+      <%= link_to project.name, project_path(project), class: "aboutPerson" %>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% content_for :rightbar do %>
+  <h2>Projects</h2>
+  <%
+    credits = @project.credits
+    
+    CreditType.all.each do |credit_type|
+
+      if credits.any? { |credit| credit.credit_type ==  credit_type} then
+        %> <h3><%= credit_type.name.capitalize + "s" %></h3> <%
+        (credits.filter { |credit| credit.credit_type == credit_type }).each do |credit|
+          %><%= link_to credit.employee.name, employee_path(credit.employee), class: "tag" %><%
+        end
+      end
+    end
+end %>
+
+<h1><%= @project.name %></h1>
+<%= sanitize md.render(@project.description) %>
+
+<% case @project.project_type
+  when Downloadable
+    if @project.project_type.linux_file? then %>
+      <%= link_to "Download Linux File", rails_blob_path(@project.project_type.linux_file, disposition: "attachment") %>
+    <% end %>
+<% end %>

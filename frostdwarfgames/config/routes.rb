@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   namespace :about do
     root "about#home"
-    get "/:id", to: "about#employee"
   end 
 
-  get "/downloadable/:id", to: "downloadable#show"
+  get "employee/:id", to: "about/about#employee", as: "employee"
+
+  get "/project/:id", to: "project#show", as: "project"
 end
