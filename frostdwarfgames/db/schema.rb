@@ -72,12 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_14_185001) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "project_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "project_type_type"
     t.bigint "project_type_id"

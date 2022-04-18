@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   root "root#home"
   get "/csc", to: "root#csc"
 
-  namespace :about do
-    root "about#home"
-  end 
+  resources :employee
+  resources :project
 
-  get "employee/:id", to: "about/about#employee", as: "employee"
+  get "/about", to: "about#show", as: "about"
 
-  get "/project/:id", to: "project#show", as: "project"
+#  namespace :about do
+#    root "about#home"
+#  end 
+
+#  get "employee/:id", to: "about/about#employee", as: "employee"
+
+#  get "/project/:id", to: "project#show", as: "project"
 end

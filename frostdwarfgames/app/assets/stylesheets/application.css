@@ -156,4 +156,22 @@ body {
    padding: 0.5%;
 }
 
+.aboutImage {
+	width: 12.5vw;
+	height: auto;
+	float: right;
+	margin: 0.3vw;
+  }
+  
+  .listLink {
+	color: #fff;
+	text-decoration: none;
+  }
+  
+  .listThis {
+	color: #fff;
+	font-style: normal;
+	font-weight: 900;
+  }
+
 }

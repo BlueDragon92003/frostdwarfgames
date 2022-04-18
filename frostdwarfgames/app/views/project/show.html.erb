@@ -6,9 +6,9 @@
   <% @projects.order(name: :asc).each do |project| %>
     <li>
     <% if project.id == @project.id %>
-      <em class="aboutPerson"><%= project.name %></em>
+      <em class="listThis"><%= project.name %></em>
 	<% else %>
-      <%= link_to project.name, project_path(project), class: "aboutPerson" %>
+      <%= link_to project.name, project_path(project), class: "listLink" %>
     <% end %>
     </li>
   <% end %>
@@ -38,5 +38,11 @@ end %>
   when Downloadable
     if @project.project_type.linux_file? then %>
       <%= link_to "Download Linux File", rails_blob_path(@project.project_type.linux_file, disposition: "attachment") %>
-    <% end %>
-<% end %>
+    <% end
+    if @project.project_type.windows_file? then %>
+      <%= link_to "Download Windows File", rails_blob_path(@project.project_type.windows_file, disposition: "attachment") %>
+    <% end
+    if @project.project_type.mac_file? then %>
+      <%= link_to "Download Mac File", rails_blob_path(@project.project_type.mac_file, disposition: "attachment") %>
+    <% end
+end %>

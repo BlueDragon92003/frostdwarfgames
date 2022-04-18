@@ -5,7 +5,7 @@
   <ul>
   <% @employees.order(name: :asc).each do |employee| %>
     <li>
-      <a href="about/<%= employee.id %>" class="aboutPerson" ><%= employee.name %></a>
+      <%= link_to employee.name, employee, class: "listLink" %>
     </li>
   <% end %>
   </ul>
@@ -16,6 +16,6 @@
 
 <div>
   <% @employees.order(name: :asc).each do |employee| %>
-    <a href="about/<%= employee.id %>" class="tag"><%= employee.name %></a>
+    <%= link_to employee.name, employee, class: "tag" %>
   <% end %>
 </div>

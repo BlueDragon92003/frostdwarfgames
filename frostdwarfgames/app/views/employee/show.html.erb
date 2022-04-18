@@ -6,9 +6,9 @@
   <% @employees.order(name: :asc).each do |employee| %>
     <li>
     <% if employee.id == @employee.id %>
-      <em class="aboutPerson"><%= employee.name %></em>
+      <em class="listThis"><%= employee.name %></em>
 	<% else %>
-      <a href="<%= employee.id %>" class="aboutPerson" ><%= employee.name %></a>
+      <%= link_to employee.name, employee, class: "listLink" %>
     <% end %>
     </li>
   <% end %>
