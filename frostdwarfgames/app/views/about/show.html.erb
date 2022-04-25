@@ -1,0 +1,21 @@
+<h1>About</h1>
+
+<% content_for :leftbar do %>
+  <h3>"Employees"</h3>
+  <ul>
+  <% @employees.order(name: :asc).each do |employee| %>
+    <li>
+      <%= link_to employee.name, employee, class: "listLink" %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<p>This is the about page for Frost Dwarf Games.</p>
+<p>Below is a list of people who work on this</p>
+
+<div>
+  <% @employees.order(name: :asc).each do |employee| %>
+    <%= link_to employee.name, employee, class: "tag" %>
+  <% end %>
+</div>

@@ -1,0 +1,43 @@
+<div class="cardbox" id="cardbox_<%= name %>">
+<%  i = 0
+    list.each do |item| %>
+    <%= link_to item, class: "card", id: "card_" + name + "_" + i.to_s do %>
+        <%  if item.image? then %>
+            <%= image_tag item.image, class: "cardimage" %>
+        <%  end %>
+        <%  if item.name? then %>
+            <h3><%= item.name %></h3>
+        <%  end %>
+        <%  begin
+                if item.blurb? then %>
+                <span><%= item.blurb %></span>
+                <% end %>
+        <%  rescue ; end%>
+    <%  end %>
+<%  end %>
+</div>
+
+<!--
+
+def cardbox(list, name, has_image, has_name, has_blurb, link_function)
+        i = 0
+        out = '<div id="cardbox_' + name + '" class="cardbox">'
+        list.each do | item |
+            out << '<a href="' + method(link_function).call(item) + '" class="card">'
+            out << '<div id="card_' + name + '_' + i.to_s + '">'
+            if has_image && item.image? then
+                out << (image_tag item.image, class: "cardimage")
+            end
+            if has_name && item.name? then
+                out << ('<h3>' + item.name + '</h3>')
+            end
+            if has_blurb && item.blurb? then
+                out << ('<span>' + item.blurb + '</span>')
+            end
+            out << '</div></a>'
+            i += 1
+        end
+        out << "</div>"
+        
+        out.html_safe
+    end
