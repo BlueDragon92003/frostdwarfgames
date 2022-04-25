@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
@@ -17,6 +6,31 @@
 /* General View */
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+:root {
+	--header-bg-color: #206;
+
+	--nav-item-bg-color: #308;
+	--nav-item-text-color: #fff;
+
+	--leftbar-bg-color: #333;
+	--leftbar-text-color: #fff;
+
+	--content-bg-color: #fff;
+	--content-text-color: #000;
+
+	--rightbar-bg-color: #dff;
+	--rightbar-text-color: #000;
+
+	--footer-bg-color: #eff;
+	--footer-text-color: #000;
+
+	--card-shadow-color: #ddd;
+	--card-shadow-hover-color: #adf;
+
+	--tag-bg-color: #99f;
+	--tag-text-color: #fff;
+}
 
 body {
 	box-sizing: border-box;
@@ -26,9 +40,9 @@ body {
 }
 
 .tag {
-	background: #99f;
- 	border-radius: 0.5em;
- 	color: #fff;
+	background: var(--tag-bg-color);
+	border-radius: 0.5em;
+	color: var(--tag-text-color);
 	display: inline-block;
 	font-weight: bold;
 	padding: 0.2em;
@@ -36,18 +50,38 @@ body {
 }
 
 .header {
-	background: #206;
+	background: var(--header-bg-color);
 	margin: 0;
 	width: 100vw;
 }
 
 .nav-item {
-	background: #308;
+	background: var(--nav-item-bg-color);
 	border-radius: 0.5vh;
-	color: #fff;
+	color: var(--nav-item-text-color);
 	font-size: 2vh;
 	font-weight: bold;
 	text-decoration: none;
+}
+
+.leftbar {
+	background: var(--leftbar-bg-color);
+	color: var(--leftbar-text-color);
+}
+
+.content {
+	background: var(--content-bg-color);
+	color: var(--content-text-color);
+}
+
+.rightbar {
+	background: var(--rightbar-bg-color);
+	color: var(--rightbar-text-color);
+}
+
+.footer {
+	background: var(--footer-bg-color);
+	color: var(--footer-text-color);
 }
 
 
@@ -55,23 +89,23 @@ body {
 
 @media only screen and (max-aspect-ratio: 3/4) {
 
-.header {
-	height: 10vh;
-	overflow-y: hide;
-	padding: 0 5%;
-}
+	.header {
+		height: 10vh;
+		overflow-y: hide;
+		padding: 0 5%;
+	}
 
-.header:hover {
-	height: 90vh;
-}
+	.header:hover {
+		height: 90vh;
+	}
 
-.nav-item {
-	height: 3vh;
-	width: 90vw;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-}
+	.nav-item {
+		height: 3vh;
+		width: 90vw;
+		text-align: center;
+		vertical-align: middle;
+		text-decoration: none;
+	}
 
 }
 
@@ -79,99 +113,125 @@ body {
 
 @media only screen and (min-aspect-ratio: 4/3) and (min-width: 1000px) and (min-height: 750px) {
 
-.header {
-	box-sizing: border-box;
-	height: 10vh;
-}
+	/* Layout */
 
-.nav-item {
-	box-sizing: border-box;
-	display: block;
-	float: right;
-	height: 5vh;
-	margin: 2.5vh 1vw;
-	padding: 1.5vh;
-}
+	.header {
+		box-sizing: border-box;
+		height: 10vh;
+	}
 
-.nav-item:hover {
-	text-decoration: underline;
-}
+	.nav-item {
+		box-sizing: border-box;
+		display: block;
+		float: right;
+		height: 5vh;
+		margin: 2.5vh 1vw;
+		padding: 1.5vh;
+	}
 
-.leftbar {
-	box-sizing: border-box;
-	background: #333;
-	color: #fff;
-	float: left;
-	height: 90vh;
-	margin: 0;
-	padding: 0 0.5%;
-	width: 10vw;
-}
+	.nav-item:hover {
+		text-decoration: underline;
+	}
 
-.rightbar {
-	background: #dff;
-	box-sizing: border-box;
-	float: right;
-	height: 90vh;
-	margin: 0;
-	padding: 0 0.5%;
-	width: 10vw;
-}
+	.leftbar {
+		box-sizing: border-box;
+		float: left;
+		height: 90vh;
+		margin: 0;
+		padding: 0 0.5%;
+		width: 10vw;
+	}
 
-.main {
-	box-sizing: border-box;
-	height: 90vh;
-	width: 100vw;
-}
+	.rightbar {
+		box-sizing: border-box;
+		float: right;
+		height: 90vh;
+		margin: 0;
+		padding: 0 0.5%;
+		width: 10vw;
+	}
 
-.center {
-	box-sizing: border-box;
-	height: 90vh;
-	float: left;
-	margin: 0;
-	padding: 0;
-	width: 80vw;
-}
+	.main {
+		box-sizing: border-box;
+		height: 90vh;
+		width: 100vw;
+	}
 
-.content {
-	box-sizing: border-box;
-	height: 80vh;
-	margin: 0;
-	overflow: auto;
-	padding: 0 0.5%;
-	width: 80vw;
-}
+	.center {
+		box-sizing: border-box;
+		height: 90vh;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 80vw;
+	}
 
-.footer {
-	box-sizing: border-box;
-	background: #eff;
-	height: 10vh;
-	margin: 0;
-	padding: 0 0.5%;
-	width: 80vw;
-}
+	.content {
+		box-sizing: border-box;
+		height: 80vh;
+		margin: 0;
+		overflow: auto;
+		padding: 0 0.5%;
+		width: 80vw;
+	}
 
-.footer > p {
-   margin: 0;
-   padding: 0.5%;
-}
+	.footer {
+		box-sizing: border-box;
+		height: 10vh;
+		margin: 0;
+		padding: 0 0.5%;
+		width: 80vw;
+	}
 
-.aboutImage {
-	width: 12.5vw;
-	height: auto;
-	float: right;
-	margin: 0.3vw;
-  }
-  
-  .listLink {
-	color: #fff;
-	text-decoration: none;
-  }
-  
-  .listThis {
-	color: #fff;
-	font-style: normal;
-	font-weight: 900;
-  }
+	.footer>p {
+		margin: 0;
+		padding: 0.5%;
+	}
+
+	/* Employees */
+
+	.aboutImage {
+		width: 12.5vw;
+		height: auto;
+		float: right;
+		margin: 0.3vw;
+	}
+
+	/* Resources */
+
+	.listLink {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.listThis {
+		color: inherit;
+		font-style: normal;
+		font-weight: 900;
+	}
+
+	/* Cards */
+	.card {
+		aspect-ratio: 3 / 4;
+		border: 1px solid #000;
+		border-radius: 1em;
+		box-shadow: 0.5em 0.5em 1em var(--card-shadow-color);
+		color: inherit;
+		display: block;
+		margin: 6px;
+		transition: box-shadow 0.05s;
+		text-decoration: none;
+		width: 300px;
+	}
+
+	.card:hover {
+		box-shadow: 0.5em 0.5em 3em var(--card-shadow-hover-color);
+	}
+
+	.cardimage {
+		aspect-ratio: 1 / 1;
+		width: 100%;
+		border-radius: 0.9em;
+	}
 
 }

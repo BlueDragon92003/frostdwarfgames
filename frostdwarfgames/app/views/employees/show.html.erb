@@ -33,7 +33,7 @@
 <% end %>
 
 <% if @employee.image? %>
-  <%= image_tag ("employees/" + @employee.image), class: "aboutImage" %>
+  <%= image_tag @employee.image, class: "aboutImage" %>
 <% end %>
 
 <h1><%= @employee.name %></h1>

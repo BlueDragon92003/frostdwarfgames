@@ -7,16 +7,18 @@
 		<%= csp_meta_tag %>
 
 		<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+		<%= javascript_include_tag "manifest", "data-turbo-track": "reload" %>
 	</head>	
 
 	<body>
 		<div class="header">
 				
 				<!-- Image -->
-				
-				<!-- Navigation -->
-				
-				<a href="<%= about_path %>"><div class="nav-item">About</div></a>
+								
+				<%= link_to "Home", root_path, class: "nav-item" %>
+				<%= link_to "About", about_path, class: "nav-item" %>
+				<%= link_to '"Employees"', employees_path, class: "nav-item" %>
+				<%= link_to "Projects", projects_path, class: "nav-item" %>
 				
 				<!-- User stuff eventually -->
 				

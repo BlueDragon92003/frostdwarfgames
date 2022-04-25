@@ -1,4 +1,6 @@
-class EmployeeController  < ApplicationController
+class EmployeesController  < ApplicationController
+    helper CardHelper
+
     def index
         @employees = Employee.all
     end
@@ -7,8 +9,5 @@ class EmployeeController  < ApplicationController
         @employee = Employee.find(params[:id])
         @employees = Employee.all
     end
-
-    def destroy
-    end
-
+    
 end
