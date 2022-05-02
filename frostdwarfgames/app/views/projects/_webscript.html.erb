@@ -1,1 +1,3 @@
-<script><%= @project.project_files.jsfile.download.html_safe %></script>
+<% @project.project_files.js_files.each do |js_file| %>
+<script><%= raw js_file.download %></script>
+<% end %>
