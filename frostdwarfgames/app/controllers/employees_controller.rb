@@ -1,6 +1,4 @@
 class EmployeesController  < ApplicationController
-    helper CardHelper
-
     def index
         @employees = Employee.all
     end

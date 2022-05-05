@@ -11,7 +11,7 @@ function cardresize() {
         let cards = cardboxes[i].children;
         let cardwidth = cardboxes[i].clientWidth / BASE_CARD_WIDTH;
 
-        cardwidth = BASE_CARD_WIDTH * (cardwidth - Math.floor(cardwidth)) - 12 + BASE_CARD_WIDTH;
+        cardwidth = BASE_CARD_WIDTH * (cardwidth - Math.floor(cardwidth)) - 20 + BASE_CARD_WIDTH;
 
         for (let i = 0; i < cards.length; i++) {
             cards[i].style.width = cardwidth + "px";
