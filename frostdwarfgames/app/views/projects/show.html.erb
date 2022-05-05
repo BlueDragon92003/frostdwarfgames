@@ -34,15 +34,12 @@ end %>
 <h1><%= @project.name %></h1>
 <%= sanitize md.render(@project.description) %>
 
-<% case @project.project_type
-  when Downloadable
-    if @project.project_type.linux_file? then %>
-      <%= link_to "Download Linux File", rails_blob_path(@project.project_type.linux_file, disposition: "attachment") %>
-    <% end
-    if @project.project_type.windows_file? then %>
-      <%= link_to "Download Windows File", rails_blob_path(@project.project_type.windows_file, disposition: "attachment") %>
-    <% end
-    if @project.project_type.mac_file? then %>
-      <%= link_to "Download Mac File", rails_blob_path(@project.project_type.mac_file, disposition: "attachment") %>
-    <% end
-end %>
+<%=
+project_type_string = case @project.project_files
+  when Downloadable then "downloadable"
+  when Webscript then "webscript"
+  else "error"
+end
+
+render project_type_string, locals: {project: @project}
+%>

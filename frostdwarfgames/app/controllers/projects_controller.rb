@@ -1,6 +1,4 @@
-class ProjectsController < ApplicationController
-  helper CardHelper
-  
+class ProjectsController < ApplicationController  
   def index
     @projects = Project.all
   end

@@ -218,14 +218,15 @@ body {
 		box-shadow: 0.5em 0.5em 1em var(--card-shadow-color);
 		color: inherit;
 		display: block;
-		margin: 6px;
+		float: left;
+		margin: 10px;
 		transition: box-shadow 0.05s;
 		text-decoration: none;
 		width: 300px;
 	}
 
 	.card:hover {
-		box-shadow: 0.5em 0.5em 3em var(--card-shadow-hover-color);
+		box-shadow: 0.5em 0.5em 2em var(--card-shadow-hover-color);
 	}
 
 	.cardimage {
