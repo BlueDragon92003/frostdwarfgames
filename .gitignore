@@ -1,4 +1,5 @@
 frostdwarfgames/config/database.yml
+frostdwarfgames/config/master.key
 frostdwarfgames/public/assets/
 frostdwarfgames/tmp/
 frostdwarfgames/log/
