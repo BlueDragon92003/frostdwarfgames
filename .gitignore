@@ -2,4 +2,6 @@ frostdwarfgames/config/database.yml
 frostdwarfgames/public/assets/
 frostdwarfgames/tmp/
 frostdwarfgames/log/
-frostdwarfgames/storage
+frostdwarfgames/storage/
+frostdwarfgames/vendor/
+frostdwarfgames/.bundle/
