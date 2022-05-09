@@ -1,11 +1,11 @@
 <h1>About</h1>
 
 <% content_for :leftbar do %>
-  <h3>"Employees"</h3>
+  <h3>Contributors</h3>
   <ul>
-  <% @employees.order(name: :asc).each do |employee| %>
+  <% @contributors.order(name: :asc).each do |contributor| %>
     <li>
-      <%= link_to employee.name, employee, class: "listLink" %>
+      <%= link_to contributor.name, contributor, class: "listLink" %>
     </li>
   <% end %>
   </ul>
@@ -15,7 +15,7 @@
 <p>Below is a list of people who work on this</p>
 
 <div>
-  <% @employees.order(name: :asc).each do |employee| %>
-    <%= link_to employee.name, employee, class: "tag" %>
+  <% @contributors.order(name: :asc).each do |contributor| %>
+    <%= link_to contributor.name, contributor, class: "tag" %>
   <% end %>
 </div>

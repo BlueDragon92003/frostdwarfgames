@@ -1,5 +1,5 @@
 class AboutController < ApplicationController
   def show
-    @employees = Employee.all
+    @contributors = Contributor.all
   end
 end
