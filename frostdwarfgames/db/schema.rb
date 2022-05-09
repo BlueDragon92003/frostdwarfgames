@@ -39,7 +39,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_05_191315) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "credit_types", charset: "utf8mb4", force: :cascade do |t|
+  create_table "contributors", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "about"
+    t.binary "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "credit_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,12 +55,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_05_191315) do
 
   create_table "credits", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "project_id"
-    t.bigint "employee_id"
+    t.bigint "contributor_id"
     t.bigint "credit_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["contributor_id"], name: "index_credits_on_contributor_id"
     t.index ["credit_type_id"], name: "index_credits_on_credit_type_id"
-    t.index ["employee_id"], name: "index_credits_on_employee_id"
     t.index ["project_id"], name: "index_credits_on_project_id"
   end
 
@@ -64,15 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_05_191315) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.text "about"
-    t.binary "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "projects", charset: "utf8mb4", force: :cascade do |t|
+  create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "project_files_type"
     t.bigint "project_files_id"
     t.string "name"

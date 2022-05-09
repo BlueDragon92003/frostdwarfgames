@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "root#home"
   get "/csc", to: "root#csc"
 
-  resources :employees
+  resources :contributors
   resources :projects
 
   get "/about", to: "about#show", as: "about"

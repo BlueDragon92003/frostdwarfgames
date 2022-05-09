@@ -188,7 +188,7 @@ body {
 		padding: 0.5%;
 	}
 
-	/* Employees */
+	/* Contributors */
 
 	.aboutImage {
 		width: 12.5vw;
@@ -211,6 +211,7 @@ body {
 	}
 
 	/* Cards */
+
 	.card {
 		aspect-ratio: 3 / 4;
 		border: 1px solid #000;

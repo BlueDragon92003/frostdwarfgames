@@ -1,14 +1,14 @@
 <% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
 
 <% content_for :leftbar do %>
-  <h3>"Employees"</h3>
+  <h3>Contributors</h3>
   <ul>
-  <% @employees.order(name: :asc).each do |employee| %>
+  <% @contributors.order(name: :asc).each do |contributor| %>
     <li>
-    <% if employee.id == @employee.id %>
-      <em class="listThis"><%= employee.name %></em>
+    <% if contributor.id == @contributor.id %>
+      <em class="listThis"><%= contributor.name %></em>
 	<% else %>
-      <%= link_to employee.name, employee, class: "listLink" %>
+      <%= link_to contributor.name, contributor, class: "listLink" %>
     <% end %>
     </li>
   <% end %>
@@ -18,7 +18,7 @@
 <% content_for :rightbar do %>
   <h2>Projects</h2>
   <%
-    credits = @employee.credits
+    credits = @contributor.credits
     
     CreditType.all.each do |credit_type|
 
@@ -32,9 +32,9 @@
   %>
 <% end %>
 
-<% if @employee.image? %>
-  <%= image_tag @employee.image, class: "aboutImage" %>
+<% if @contributor.image? %>
+  <%= image_tag @contributor.image, class: "aboutImage" %>
 <% end %>
 
-<h1><%= @employee.name %></h1>
-<%= sanitize md.render(@employee.about) %>
+<h1><%= @contributor.name %></h1>
+<%= sanitize md.render(@contributor.about) %>
