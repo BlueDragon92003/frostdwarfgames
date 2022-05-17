@@ -1,0 +1,14 @@
+<h2><%= name %></h2>
+<%
+credits = credits_of.credits
+
+CreditType.all.each do |credit_type|
+
+    if credits.any? { |credit| credit.credit_type == credit_type} then
+        %> <h3><%= credit_type.name.capitalize + (pluralize ? 's' : '') %></h3> <%
+        (credits.filter { |credit| credit.credit_type == credit_type }).each do |credit|
+            %><%= link_to link_lambda.call(credit).name, link_lambda.call(credit), class: "tag" %><%
+        end
+    end
+end
+%>
