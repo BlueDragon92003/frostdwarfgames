@@ -1,9 +1,9 @@
-<% if @project.project_files.linux_file? then %>
+<%  if locals[:project].project_files.linux_file? then %>
       <%= link_to "Download Linux File", rails_blob_path(@project.project_files.linux_file, disposition: "attachment") %>
     <% end
-    if @project.project_files.windows_file? then %>
+    if locals[:project].project_files.windows_file? then %>
       <%= link_to "Download Windows File", rails_blob_path(@project.project_files.windows_file, disposition: "attachment") %>
     <% end
-    if @project.project_files.mac_file? then %>
+    if locals[:project].project_files.mac_file? then %>
       <%= link_to "Download Mac File", rails_blob_path(@project.project_files.mac_file, disposition: "attachment") %>
     <% end %>

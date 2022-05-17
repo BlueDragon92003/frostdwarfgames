@@ -1,35 +1,12 @@
 <% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
 
-<% content_for :leftbar do %>
-  <h3>Projects</h3>
-  <ul>
-  <% @projects.order(name: :asc).each do |project| %>
-    <li>
-    <% if project.id == @project.id %>
-      <em class="listThis"><%= project.name %></em>
-	<% else %>
-      <%= link_to project.name, project_path(project), class: "listLink" %>
-    <% end %>
-    </li>
-  <% end %>
-  </ul>
-<% end %>
+<% content_for :leftbar do 
+    render partial: "list_with_self", locals: {name: "Projects", list: @projects, this: @project}
+  end %>
 
-<% content_for :rightbar do %>
-  <h2>Projects</h2>
-  <%
-    credits = @project.credits
-    
-    CreditType.all.each do |credit_type|
-
-      if credits.any? { |credit| credit.credit_type ==  credit_type} then
-        %> <h3><%= credit_type.name.capitalize + "s" %></h3> <%
-        (credits.filter { |credit| credit.credit_type == credit_type }).each do |credit|
-          %><%= link_to credit.contributor.name, contributor_path(credit.contributor), class: "tag" %><%
-        end
-      end
-    end
-end %>
+<% content_for :rightbar do
+    render partial: "credit_taglist", locals: {name: 'Contributors', credits_of: @project, pluralize: true, link_lambda: ->(credit){credit.contributor}}
+  end %>
 
 <h1><%= @project.name %></h1>
 <%= sanitize md.render(@project.description) %>

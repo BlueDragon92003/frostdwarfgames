@@ -1,0 +1,13 @@
+<h3><%= name %></h3>
+  <ul class="listWithSelf">
+
+  <% list.order(name: :asc).each do | item | %>
+    <li>
+    <% if item == this %>
+      <strong class="listWithSelfThis"><%= item.name %></strong>
+  	<% else %>
+      <%= link_to item.name, item, class: "listWithSelfLink" %>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>

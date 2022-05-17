@@ -1,36 +1,12 @@
 <% md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions = {}) %>
 
-<% content_for :leftbar do %>
-  <h3>Contributors</h3>
-  <ul>
-  <% @contributors.order(name: :asc).each do |contributor| %>
-    <li>
-    <% if contributor.id == @contributor.id %>
-      <em class="listThis"><%= contributor.name %></em>
-	<% else %>
-      <%= link_to contributor.name, contributor, class: "listLink" %>
-    <% end %>
-    </li>
-  <% end %>
-  </ul>
-<% end %>
+<% content_for :leftbar do
+    render partial: "list_with_self", locals: {name: "Contributors", list: @contributors, this: @contributor}
+  end %>
 
-<% content_for :rightbar do %>
-  <h2>Projects</h2>
-  <%
-    credits = @contributor.credits
-    
-    CreditType.all.each do |credit_type|
-
-      if credits.any? { |credit| credit.credit_type ==  credit_type} then
-        %> <h3><%= credit_type.name.capitalize %></h3> <%
-        (credits.filter { |credit| credit.credit_type == credit_type }).each do |credit|
-          %><%= link_to credit.project.name, project_path(credit.project), class: "tag" %><%
-        end
-      end
-    end
-  %>
-<% end %>
+<% content_for :rightbar do
+    render partial: "credit_taglist", locals: {name: 'Projects', credits_of: @contributor, pluralize: false, link_lambda: ->(credit){credit.project}}
+  end %>
 
 <% if @contributor.image? %>
   <%= image_tag @contributor.image, class: "aboutImage" %>

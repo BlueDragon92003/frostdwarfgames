@@ -197,33 +197,53 @@ body {
 		margin: 0.3vw;
 	}
 
-	/* Resources */
+	/* Lists */
 
-	.listLink {
+	.listWithSelf {
+		padding-left: 1em;
+		color: inherit;
+	}
+
+	.listWithSelfLink {
 		color: inherit;
 		text-decoration: none;
 	}
-
-	.listThis {
-		color: inherit;
-		font-style: normal;
-		font-weight: 900;
+	
+	.listWithSelfThis {
+		font-size: larger;
+		text-shadow: 0 0 0.2em;
 	}
 
 	/* Cards */
 
+	.cardbox {
+		align-items: flex-start;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: left;
+	}
+
 	.card {
-		aspect-ratio: 3 / 4;
 		border: 1px solid #000;
 		border-radius: 1em;
 		box-shadow: 0.5em 0.5em 1em var(--card-shadow-color);
 		color: inherit;
 		display: block;
+		flex: 1 0 0;
 		float: left;
 		margin: 10px;
 		transition: box-shadow 0.05s;
 		text-decoration: none;
-		width: 300px;
+		max-width: 300px;
+	}
+
+	.card h3 {
+		text-align: center;
+	}
+
+	.card p {
+		margin: 0 1em 0.5em;
+		text-align: left;
 	}
 
 	.card:hover {
@@ -231,7 +251,6 @@ body {
 	}
 
 	.cardimage {
-		aspect-ratio: 1 / 1;
 		width: 100%;
 		border-radius: 0.9em;
 	}
